@@ -1,6 +1,5 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
-const router = require("../routes/authRoutes");
 
 const createToken = async (user) => {
   const payload = {
