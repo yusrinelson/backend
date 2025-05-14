@@ -16,6 +16,10 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
     },
+    stock: {
+      type: Number,
+      required: [true, "Please add a stock"],
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
