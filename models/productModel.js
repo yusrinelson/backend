@@ -20,6 +20,22 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Please add a stock"],
     },
+    images: [
+      {
+        url: {
+          type: String,
+          required: true,
+        },
+        alt: {
+          type: String,
+          default: ''
+        }
+      }
+    ],
+    thumbnail: {
+      type: String,
+      dafault: ''
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

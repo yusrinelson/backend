@@ -6,10 +6,10 @@ const createToken = async (user) => {
     _id: user._id,
     role: user.role,
   };
-  const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "2m" });
+  const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "1h" });
 
   const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRET, {
-    expiresIn: "5m",
+    expiresIn: "7d",
   });
 
   await User.updateOne({ _id: user._id }, { refreshToken });
