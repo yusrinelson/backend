@@ -12,11 +12,14 @@ const {
 const { protect, restrictTo } = require("../middleware/authMiddleware");
 const { upload } = require("../config/cloudinary");
 
+//public routes
 router.get("/", getAllProducts);
-router.post("/", protect, restrictTo("seller"), upload.array('images', 5),createProduct);
-
 router.get('/:id', getSingleProduct);
-router.patch("/:id", protect, restrictTo("seller"), upload.array('images', 5),updateProduct);
+
+
+//protected routes
+router.post("/", protect, restrictTo("seller"), upload.array('thumbnail'),createProduct);
+router.patch("/:id", protect, restrictTo("seller"), upload.array('thumbnail'),updateProduct);
 router.delete("/:id", protect, restrictTo("seller"), deleteProduct);
 router.get('/seller/:sellerId', protect, getProductsBySeller);
 

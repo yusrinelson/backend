@@ -20,18 +20,18 @@ const productSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Please add a stock"],
     },
-    images: [
-      {
-        url: {
-          type: String,
-          required: true,
-        },
-        alt: {
-          type: String,
-          default: ''
-        }
-      }
-    ],
+    // images: [
+    //   {
+    //     url: {
+    //       type: String,
+    //       required: true,
+    //     },
+    //     alt: {
+    //       type: String,
+    //       default: ''
+    //     }
+    //   }
+    // ],
     thumbnail: {
       type: String,
       dafault: ''
