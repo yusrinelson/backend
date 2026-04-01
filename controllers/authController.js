@@ -75,7 +75,7 @@ const refreshToken = async (req, res) => {
   const { refreshToken } = req.body;
 
   if (!refreshToken) {
-    return res.satus(401).json({ message: "No refresh token" });
+    return res.status(401).json({ message: "No refresh token" });
   }
 
   try {

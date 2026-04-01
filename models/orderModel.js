@@ -110,14 +110,22 @@ const orderSchema = new mongoose.Schema(
     paymentInfo: {
       method: {
         type: String,
-        enum: ["credit_card", "debit_card", "paypal", "eft"],
-        default: "credit_card",
+        enum: ["credit_card", "debit_card", "payfast", "eft"],
+        default: "payfast",
+      },
+      status: {
+        type: String,
+        enum: ["pending", "paid", "failed", "refunded"],
+        default: "pending",
       },
       paidAt: {
         type: Date,
       },
       transactionId: {
         type: String,
+      },
+      payfastData: {
+        type: Object,
       },
     },
     deliveryDetails: {

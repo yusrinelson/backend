@@ -34,3 +34,16 @@ exports.restrictTo = (...roles) => {
     next();
   };
 };
+
+
+// protect
+// Use this on routes where user must be logged in.
+// Example: adding item to cart, checking out, posting review.
+// It verifies JWT, gets user info, attaches it to req.user.
+
+// restrictTo
+// Use this when only certain roles can access.
+// Example: only admin can create products.
+// Syntax: router.post("/create", protect, restrictTo("admin"), createProduct)
+
+// So any protected route = protect first, then restrictTo if role-based.
